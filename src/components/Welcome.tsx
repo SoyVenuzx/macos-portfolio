@@ -111,7 +111,7 @@ export default function Welcome() {
       </h1>
 
       <div className="small-screen">
-        <p>This Portfolio is desgined for desktop/tabled screens only</p>
+        <p>This Portfolio is desgined for desktop/tablet screens only</p>
       </div>
     </section>
   );
