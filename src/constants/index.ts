@@ -1,3 +1,5 @@
+import type { windowKeyType } from "@/store/window/window.types";
+
 const navLinks = [
   {
     id: 1,
@@ -35,7 +37,14 @@ const navIcons = [
   },
 ];
 
-const dockApps = [
+type dockAppsType = {
+  id: windowKeyType;
+  name: string;
+  icon: string;
+  canOpen: boolean;
+};
+
+const dockApps: dockAppsType[] = [
   {
     id: "finder",
     name: "Portfolio", // was "Finder"
@@ -490,7 +499,7 @@ export const locations = {
   trash: TRASH_LOCATION,
 };
 
-const INITIAL_Z_INDEX = 1000;
+const INITIAL_Z_INDEX: number = 1000;
 
 const WINDOW_CONFIG = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -501,6 +510,7 @@ const WINDOW_CONFIG = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
