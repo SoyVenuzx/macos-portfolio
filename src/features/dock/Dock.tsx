@@ -1,61 +1,28 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
 import { dockApps } from "@/constants/index";
+import useWindowStore from "@/store/window/window.store";
+import { useIconsHover } from "./hooks/useIconsHover";
 import type { toggleAppProps } from "./index";
 
 export default function Dock() {
+  const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    const dock = dockRef.current;
+  useIconsHover(dockRef);
 
-    if (!dock) return () => {};
+  const toggleApp = (app: toggleAppProps) => {
+    // TODO: Implement Open Window Logic
+    if (!app.canOpen || app.id === "trash") return;
 
-    const icons = dock.querySelectorAll(".dock-icon");
+    const window = windows[app.id];
 
-    const animateIcons = (mouseX: number) => {
-      const { left } = dock.getBoundingClientRect();
-
-      icons.forEach((icon) => {
-        const { left: iconLeft, width } = icon.getBoundingClientRect();
-        const center = iconLeft - left + width / 2;
-        const distance = Math.abs(mouseX - center);
-
-        const intensity = Math.exp(-(distance ** 2.5) / 15000);
-
-        gsap.to(icon, {
-          scale: 1 + 0.25 * intensity,
-          y: -15 * intensity,
-          duration: 0.16,
-          ease: "power1.out",
-        });
-      });
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const { left } = dock.getBoundingClientRect();
-
-      animateIcons(e.clientX - left);
-    };
-
-    const resetIcons = () => {
-      icons.forEach((icon) => {
-        gsap.to(icon, { scale: 1, y: 0, duration: 0.3, ease: "power1.out" });
-      });
-    };
-
-    dock.addEventListener("mousemove", handleMouseMove);
-    dock.addEventListener("mouseleave", resetIcons);
-
-    return () => {
-      dock.removeEventListener("mousemove", handleMouseMove);
-      dock.removeEventListener("mouseleave", resetIcons);
-    };
-  }, []);
-
-  const toggleApp = (app: toggleAppProps) => {};
+    if (window.isOpen) {
+      closeWindow(app.id);
+    } else {
+      openWindow(app.id);
+    }
+  };
 
   return (
     <section id="dock">
