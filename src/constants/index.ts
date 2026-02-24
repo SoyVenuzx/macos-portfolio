@@ -1,4 +1,4 @@
-import type { windowKeyType } from "@/store/window/window.types";
+import type { blogPostsType, dockAppsType } from "@/types";
 
 const navLinks = [
   {
@@ -36,13 +36,6 @@ const navIcons = [
     img: "/icons/mode.svg",
   },
 ];
-
-type dockAppsType = {
-  id: windowKeyType;
-  name: string;
-  icon: string;
-  canOpen: boolean;
-};
 
 const dockApps: dockAppsType[] = [
   {
@@ -83,7 +76,7 @@ const dockApps: dockAppsType[] = [
   },
 ];
 
-const blogPosts = [
+const blogPosts: blogPostsType[] = [
   {
     id: 1,
     date: "Sep 2, 2025",
