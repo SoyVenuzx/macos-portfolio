@@ -8,9 +8,15 @@ export interface blogPostsType {
   link: string;
 }
 
-export type dockAppsType = {
+export interface dockAppsType {
   id: windowKeyType;
   name: string;
   icon: string;
   canOpen: boolean;
-};
+}
+
+export interface navLinksType {
+  id: number;
+  name: string;
+  type: windowKeyType;
+}

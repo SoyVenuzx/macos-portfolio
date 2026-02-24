@@ -1,6 +1,6 @@
-import type { blogPostsType, dockAppsType } from "@/types";
+import type { blogPostsType, dockAppsType, navLinksType } from "@/types";
 
-const navLinks = [
+const navLinks: navLinksType[] = [
   {
     id: 1,
     name: "Projects",
