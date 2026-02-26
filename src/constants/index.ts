@@ -1,4 +1,10 @@
-import type { blogPostsType, dockAppsType, navLinksType } from "@/types";
+import type {
+  blogPostsType,
+  dockAppsType,
+  LocationRoot,
+  locationsType,
+  navLinksType,
+} from "@/types";
 
 const navLinks: navLinksType[] = [
   {
@@ -217,7 +223,7 @@ export {
   gallery,
 };
 
-const WORK_LOCATION = {
+export const WORK_LOCATION: LocationRoot = {
   id: 1,
   type: "work",
   name: "Work",
@@ -385,7 +391,7 @@ const WORK_LOCATION = {
   ],
 };
 
-const ABOUT_LOCATION = {
+export const ABOUT_LOCATION: LocationRoot = {
   id: 2,
   type: "about",
   name: "About me",
@@ -438,7 +444,7 @@ const ABOUT_LOCATION = {
   ],
 };
 
-const RESUME_LOCATION = {
+export const RESUME_LOCATION: LocationRoot = {
   id: 3,
   type: "resume",
   name: "Resume",
@@ -457,7 +463,7 @@ const RESUME_LOCATION = {
   ],
 };
 
-const TRASH_LOCATION = {
+export const TRASH_LOCATION: LocationRoot = {
   id: 4,
   type: "trash",
   name: "Trash",
@@ -485,7 +491,7 @@ const TRASH_LOCATION = {
   ],
 };
 
-export const locations = {
+export const locations: locationsType = {
   work: WORK_LOCATION,
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,

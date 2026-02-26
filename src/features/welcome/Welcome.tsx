@@ -6,7 +6,7 @@ export default function Welcome() {
       <AnimatedText
         as="p"
         hoverType="subtitle"
-        text="Hey, I'm GB! Welcome to my"
+        text="Hey, I'm Anto! Welcome to my"
         className="font-georama text-3xl"
         baseWeight={100}
       />

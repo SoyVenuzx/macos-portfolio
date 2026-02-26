@@ -8,8 +8,6 @@ type WindowControlsProps = {
 function WindowControls({ target }: WindowControlsProps) {
   const { closeWindow } = useWindowStore();
 
-  console.log({ target });
-
   return (
     <div id="window-controls">
       <button

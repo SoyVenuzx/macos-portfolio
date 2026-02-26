@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav>
       <div>
         <img src="/images/logo.svg" alt="Logo" />
-        <p className="font-bold">Macbook Portfolio</p>
+        <p className="font-bold">Anto's Portfolio</p>
 
         <ul>
           {navLinks.map(({ id, name, type }) => (
