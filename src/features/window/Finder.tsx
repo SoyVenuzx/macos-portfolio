@@ -21,7 +21,9 @@ function Finder() {
     if (["fig", "url"].includes(item.fileType) && item.href)
       return window.open(item.href, "_blank");
 
-    // openWindow(`${item.fileType}${item.kind}`, item);
+    if (item.fileType === "img") return openWindow("imgfile", item);
+
+    if (item.fileType === "txt") return openWindow("txtfile", item);
   };
 
   const renderList = (name: string, items: locationsType | LocationItem[]) => {
