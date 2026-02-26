@@ -6,7 +6,9 @@ import { Welcome } from "@/features/welcome";
 import {
   Contact,
   Finder,
+  Home,
   ImageFile,
+  Photos,
   Resume,
   Safari,
   Terminal,
@@ -29,6 +31,8 @@ export default function App() {
       <ImageFile />
       <Finder />
       <Contact />
+      <Home />
+      <Photos />
     </main>
   );
 }

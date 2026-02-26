@@ -1,6 +1,8 @@
 export { default as Contact } from "./Contact";
 export { default as Finder } from "./Finder";
+export { default as Home } from "./Home";
 export { default as ImageFile } from "./Image";
+export { default as Photos } from "./Photos";
 export { default as Resume } from "./Resume";
 export { default as Safari } from "./Safari";
 export { default as Terminal } from "./Terminal";
