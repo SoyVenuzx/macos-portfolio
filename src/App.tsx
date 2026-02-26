@@ -4,6 +4,7 @@ import { Dock } from "@/features/dock";
 import { Navbar } from "@/features/navbar";
 import { Welcome } from "@/features/welcome";
 import {
+  Contact,
   Finder,
   ImageFile,
   Resume,
@@ -27,6 +28,7 @@ export default function App() {
       <TextFile />
       <ImageFile />
       <Finder />
+      <Contact />
     </main>
   );
 }

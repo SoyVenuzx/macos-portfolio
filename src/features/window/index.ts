@@ -1,3 +1,4 @@
+export { default as Contact } from "./Contact";
 export { default as Finder } from "./Finder";
 export { default as ImageFile } from "./Image";
 export { default as Resume } from "./Resume";
